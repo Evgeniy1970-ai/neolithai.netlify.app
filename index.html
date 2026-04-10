@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Automation Specialist</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0d0f14;
+  --bg2:#13161e;
+  --bg3:#1a1d27;
+  --accent:#6c63ff;
+  --accent2:#4fd1c5;
+  --text:#e8eaf0;
+  --text2:#8b8fa8;
+  --border:#ffffff14;
+  --card:#1a1d27;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;font-size:16px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#0d0f14dd;backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.5px;}
+.nav-links{display:flex;gap:1.5rem;list-style:none;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.lang-switcher{display:flex;gap:6px;}
+.lang-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer;transition:all .2s;}
+.lang-btn.active,.lang-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* SECTIONS */
+section{padding:6rem 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:.5rem;}
+h2.section-title{font-size:2rem;font-weight:600;margin-bottom:3rem;color:var(--text);}
+
+/* HERO */
+#hero{padding:9rem 2rem 6rem;border-bottom:1px solid var(--border);}
+.hero-layout{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;max-width:1100px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:13px;color:var(--text2);margin-bottom:1.5rem;}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);}
+h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;margin-bottom:1rem;color:var(--text);}
+h1 span{color:var(--accent);}
+.hero-sub{font-size:1.1rem;color:var(--text2);max-width:520px;margin-bottom:2rem;}
+.btn-group{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:opacity .2s;}
+.btn-primary:hover{opacity:.85;}
+.btn-outline{background:none;color:var(--text);border:1px solid var(--border);padding:12px 28px;border-radius:8px;font-size:15px;cursor:pointer;text-decoration:none;transition:border-color .2s;}
+.btn-outline:hover{border-color:var(--accent2);}
+.hero-avatar{width:220px;height:220px;border-radius:50%;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:72px;flex-shrink:0;}
+.hero-stats{display:flex;gap:2rem;margin-top:2.5rem;}
+.stat{border-left:2px solid var(--accent);padding-left:1rem;}
+.stat-num{font-size:1.5rem;font-weight:700;color:var(--text);}
+.stat-label{font-size:13px;color:var(--text2);}
+
+/* SERVICES */
+#services{background:var(--bg2);border-bottom:1px solid var(--border);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:border-color .2s;}
+.service-card:hover{border-color:var(--accent);}
+.service-icon{font-size:28px;margin-bottom:1rem;}
+.service-title{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--text);}
+.service-desc{font-size:14px;color:var(--text2);line-height:1.6;}
+
+/* CASES */
+#cases{border-bottom:1px solid var(--border);}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s;}
+.case-card:hover{border-color:var(--accent2);}
+.case-header{padding:1.5rem 1.5rem 1rem;border-bottom:1px solid var(--border);}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent2);margin-bottom:.5rem;}
+.case-name{font-size:1rem;font-weight:600;color:var(--text);}
+.case-body{padding:1rem 1.5rem 1.5rem;}
+.case-metric{display:flex;align-items:baseline;gap:8px;margin-bottom:.5rem;}
+.case-num{font-size:1.75rem;font-weight:700;color:var(--accent);}
+.case-desc{font-size:14px;color:var(--text2);}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--bg2);border-bottom:1px solid var(--border);}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+.t-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;}
+.t-quote{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:1.25rem;font-style:italic;}
+.t-author{display:flex;align-items:center;gap:12px;}
+.t-avatar{width:40px;height:40px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:var(--accent);}
+.t-name{font-size:14px;font-weight:600;color:var(--text);}
+.t-role{font-size:12px;color:var(--text2);}
+
+/* BLOG */
+#blog{border-bottom:1px solid var(--border);}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;cursor:pointer;transition:border-color .2s;}
+.blog-card:hover{border-color:var(--accent);}
+.blog-date{font-size:12px;color:var(--text2);margin-bottom:.5rem;}
+.blog-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.75rem;line-height:1.4;}
+.blog-excerpt{font-size:14px;color:var(--text2);line-height:1.6;}
+.blog-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--accent2);margin-top:1rem;}
+
+/* CONTACT */
+#contact{background:var(--bg2);}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-info h3{font-size:1.5rem;font-weight:600;margin-bottom:1rem;color:var(--text);}
+.contact-info p{color:var(--text2);margin-bottom:2rem;}
+.social-links{display:flex;flex-direction:column;gap:12px;}
+.social-link{display:flex;align-items:center;gap:12px;color:var(--text2);text-decoration:none;font-size:15px;transition:color .2s;}
+.social-link:hover{color:var(--accent);}
+.social-icon{width:36px;height:36px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;background:var(--bg3);}
+.contact-form{display:flex;flex-direction:column;gap:1rem;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-size:13px;color:var(--text2);}
+.form-input,.form-textarea{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--text);font-size:15px;font-family:inherit;transition:border-color .2s;outline:none;}
+.form-input:focus,.form-textarea:focus{border-color:var(--accent);}
+.form-textarea{resize:vertical;min-height:120px;}
+.form-submit{background:var(--accent);color:#fff;border:none;padding:13px;border-radius:8px;font-size:15px;font-weight:500;cursor:pointer;transition:opacity .2s;}
+.form-submit:hover{opacity:.85;}
+
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:var(--text2);font-size:13px;}
+
+@media(max-width:760px){
+  .hero-layout{grid-template-columns:1fr;}
+  .hero-avatar{display:none;}
+  .contact-layout{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+}
+
+/* lang hide */
+[data-lang]{display:none;}
+[data-lang].active{display:block;}
+span[data-lang]{display:none;}
+span[data-lang].active{display:inline;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">⚡ AIflow</div>
+    <ul class="nav-links">
+      <li><a href="#hero" data-nav="about">About</a></li>
+      <li><a href="#services" data-nav="services">Services</a></li>
+      <li><a href="#cases" data-nav="cases">Cases</a></li>
+      <li><a href="#testimonials" data-nav="reviews">Reviews</a></li>
+      <li><a href="#blog" data-nav="blog">Blog</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('uk')">UA</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-layout">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-dot"></span>
+        <span data-lang="en" class="active">Available for new projects</span>
+        <span data-lang="ru">Открыт для новых проектов</span>
+        <span data-lang="es">Disponible para nuevos proyectos</span>
+        <span data-lang="uk">Відкритий для нових проектів</span>
+      </div>
+      <h1>
+        <span data-lang="en" class="active">Automate the routine.<br><span style="color:var(--accent)">Scale the results.</span></span>
+        <span data-lang="ru">Автоматизирую рутину.<br><span style="color:var(--accent)">Масштабирую результаты.</span></span>
+        <span data-lang="es">Automatizo la rutina.<br><span style="color:var(--accent)">Escalo los resultados.</span></span>
+        <span data-lang="uk">Автоматизую рутину.<br><span style="color:var(--accent)">Масштабую результати.</span></span>
+      </h1>
+      <p class="hero-sub">
+        <span data-lang="en" class="active">AI agent workflows & business process automation specialist. I help companies save time and cut costs with smart automation.</span>
+        <span data-lang="ru">Специалист по агентским воркфлоу и автоматизации бизнес-процессов. Помогаю компаниям экономить время и снижать затраты.</span>
+        <span data-lang="es">Especialista en flujos de trabajo con agentes IA y automatización de procesos. Ayudo a las empresas a ahorrar tiempo y reducir costos.</span>
+        <span data-lang="uk">Спеціаліст з агентських воркфлоу та автоматизації бізнес-процесів. Допомагаю компаніям економити час і знижувати витрати.</span>
+      </p>
+      <div class="btn-group">
+        <a href="#contact" class="btn-primary">
+          <span data-lang="en" class="active">Get in touch</span>
+          <span data-lang="ru">Связаться</span>
+          <span data-lang="es">Contactar</span>
+          <span data-lang="uk">Зв'язатися</span>
+        </a>
+        <a href="#cases" class="btn-outline">
+          <span data-lang="en" class="active">View cases</span>
+          <span data-lang="ru">Смотреть кейсы</span>
+          <span data-lang="es">Ver casos</span>
+          <span data-lang="uk">Переглянути кейси</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">
+            <span data-lang="en" class="active">Projects completed</span>
+            <span data-lang="ru">Проектов завершено</span>
+            <span data-lang="es">Proyectos completados</span>
+            <span data-lang="uk">Проектів завершено</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">60%</div>
+          <div class="stat-label">
+            <span data-lang="en" class="active">Avg. time saved</span>
+            <span data-lang="ru">Среднее сокращение времени</span>
+            <span data-lang="es">Tiempo ahorrado promedio</span>
+            <span data-lang="uk">Середнє скорочення часу</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">
+            <span data-lang="en" class="active">Happy clients</span>
+            <span data-lang="ru">Довольных клиентов</span>
+            <span data-lang="es">Clientes satisfechos</span>
+            <span data-lang="uk">Задоволених клієнтів</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-avatar" style="padding:0;overflow:hidden;">
+  <img src="photo.jpg" alt="Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">
+      <span data-lang="en" class="active">What I do</span>
+      <span data-lang="ru">Что я делаю</span>
+      <span data-lang="es">Lo que hago</span>
+      <span data-lang="uk">Що я роблю</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="en" class="active">Services</span>
+      <span data-lang="ru">Услуги</span>
+      <span data-lang="es">Servicios</span>
+      <span data-lang="uk">Послуги</span>
+    </h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <div class="service-title">
+          <span data-lang="en" class="active">AI Agent Design</span>
+          <span data-lang="ru">Проектирование ИИ-агентов</span>
+          <span data-lang="es">Diseño de agentes IA</span>
+          <span data-lang="uk">Проектування ІІ-агентів</span>
+        </div>
+        <div class="service-desc">
+          <span data-lang="en" class="active">Building autonomous agents that handle complex multi-step tasks without human intervention.</span>
+          <span data-lang="ru">Создание автономных агентов для выполнения сложных многоэтапных задач без участия человека.</span>
+          <span data-lang="es">Creación de agentes autónomos para tareas complejas de múltiples pasos sin intervención humana.</span>
+          <span data-lang="uk">Створення автономних агентів для виконання складних багатоетапних завдань без участі людини.</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">
+          <span data-lang="en" class="active">Workflow Automation</span>
+          <span data-lang="ru">Автоматизация воркфлоу</span>
+          <span data-lang="es">Automatización de flujos</span>
+          <span data-lang="uk">Автоматизація воркфлоу</span>
+        </div>
+        <div class="service-desc">
+          <span data-lang="en" class="active">Designing end-to-end automated pipelines using Make, n8n, Zapier, and custom solutions.</span>
+          <span data-lang="ru">Разработка сквозных автоматизированных пайплайнов с помощью Make, n8n, Zapier и кастомных решений.</span>
+          <span data-lang="es">Diseño de pipelines automatizados usando Make, n8n, Zapier y soluciones personalizadas.</span>
+          <span data-lang="uk">Розробка наскрізних автоматизованих пайплайнів за допомогою Make, n8n, Zapier та власних рішень.</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <div class="service-title">
+          <span data-lang="en" class="active">API & Tool Integration</span>
+          <span data-lang="ru">Интеграция API и инструментов</span>
+          <span data-lang="es">Integración de APIs</span>
+          <span data-lang="uk">Інтеграція API та інструментів</span>
+        </div>
+        <div class="service-desc">
+          <span data-lang="en" class="active">Connecting your existing stack with AI tools — CRMs, ERPs, databases, communication apps.</span>
+          <span data-lang="ru">Подключение вашего стека к ИИ-инструментам — CRM, ERP, базы данных, мессенджеры.</span>
+          <span data-lang="es">Conectar su stack actual con herramientas de IA — CRMs, ERPs, bases de datos, apps de comunicación.</span>
+          <span data-lang="uk">Підключення вашого стеку до ІІ-інструментів — CRM, ERP, бази даних, месенджери.</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <div class="service-title">
+          <span data-lang="en" class="active">AI Chatbots & Assistants</span>
+          <span data-lang="ru">ИИ-чатботы и ассистенты</span>
+          <span data-lang="es">Chatbots y asistentes IA</span>
+          <span data-lang="uk">ІІ-чатботи та асистенти</span>
+        </div>
+        <div class="service-desc">
+          <span data-lang="en" class="active">Custom LLM-powered chatbots for support, sales, and internal operations tailored to your business.</span>
+          <span data-lang="ru">Кастомные чатботы на базе LLM для поддержки, продаж и внутренних операций.</span>
+          <span data-lang="es">Chatbots personalizados con LLM para soporte, ventas y operaciones internas de su empresa.</span>
+          <span data-lang="uk">Кастомні чатботи на базі LLM для підтримки, продажів та внутрішніх операцій.</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <div class="service-title">
+          <span data-lang="en" class="active">Process Audit & Consulting</span>
+          <span data-lang="ru">Аудит и консалтинг процессов</span>
+          <span data-lang="es">Auditoría y consultoría</span>
+          <span data-lang="uk">Аудит та консалтинг процесів</span>
+        </div>
+        <div class="service-desc">
+          <span data-lang="en" class="active">Identifying automation opportunities in your business and building a practical roadmap.</span>
+          <span data-lang="ru">Выявление возможностей автоматизации в вашем бизнесе и построение практического роадмэпа.</span>
+          <span data-lang="es">Identificación de oportunidades de automatización en su negocio y creación de un roadmap práctico.</span>
+          <span data-lang="uk">Виявлення можливостей автоматизації у вашому бізнесі та побудова практичного роадмепу.</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <div class="service-title">
+          <span data-lang="en" class="active">RAG & Knowledge Bases</span>
+          <span data-lang="ru">RAG и базы знаний</span>
+          <span data-lang="es">RAG y bases de conocimiento</span>
+          <span data-lang="uk">RAG та бази знань</span>
+        </div>
+        <div class="service-desc">
+          <span data-lang="en" class="active">Retrieval-augmented generation systems that let AI work with your proprietary data securely.</span>
+          <span data-lang="ru">Системы на базе RAG, позволяющие ИИ безопасно работать с вашими корпоративными данными.</span>
+          <span data-lang="es">Sistemas RAG que permiten a la IA trabajar de forma segura con sus datos propietarios.</span>
+          <span data-lang="uk">RAG-системи, що дозволяють ІІ безпечно працювати з вашими корпоративними даними.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="container">
+    <div class="section-label">
+      <span data-lang="en" class="active">Portfolio</span>
+      <span data-lang="ru">Портфолио</span>
+      <span data-lang="es">Portafolio</span>
+      <span data-lang="uk">Портфоліо</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="en" class="active">Case studies</span>
+      <span data-lang="ru">Кейсы</span>
+      <span data-lang="es">Casos de estudio</span>
+      <span data-lang="uk">Кейси</span>
+    </h2>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-tag">E-commerce</div>
+          <div class="case-name">
+            <span data-lang="en" class="active">Order processing automation</span>
+            <span data-lang="ru">Автоматизация обработки заказов</span>
+            <span data-lang="es">Automatización de procesamiento de pedidos</span>
+            <span data-lang="uk">Автоматизація обробки замовлень</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-metric"><span class="case-num">80%</span></div>
+          <div class="case-desc">
+            <span data-lang="en" class="active">Reduction in manual order handling time through an AI agent that processes, verifies, and routes orders automatically.</span>
+            <span data-lang="ru">Сокращение ручной обработки заказов с помощью ИИ-агента, который автоматически обрабатывает, проверяет и маршрутизирует заказы.</span>
+            <span data-lang="es">Reducción en el tiempo de procesamiento manual mediante un agente IA que procesa, verifica y enruta pedidos automáticamente.</span>
+            <span data-lang="uk">Скорочення ручної обробки замовлень за допомогою ІІ-агента, що автоматично обробляє, перевіряє та маршрутизує замовлення.</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-tag">SaaS</div>
+          <div class="case-name">
+            <span data-lang="en" class="active">Customer support AI assistant</span>
+            <span data-lang="ru">ИИ-ассистент для поддержки клиентов</span>
+            <span data-lang="es">Asistente IA de soporte al cliente</span>
+            <span data-lang="uk">ІІ-асистент для підтримки клієнтів</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-metric"><span class="case-num">65%</span></div>
+          <div class="case-desc">
+            <span data-lang="en" class="active">Of tickets resolved without human involvement. RAG-powered chatbot trained on product docs and FAQs.</span>
+            <span data-lang="ru">Тикетов решается без участия человека. RAG-чатбот, обученный на документации и FAQ продукта.</span>
+            <span data-lang="es">De tickets resueltos sin intervención humana. Chatbot RAG entrenado en documentación y preguntas frecuentes.</span>
+            <span data-lang="uk">Тикетів вирішується без участі людини. RAG-чатбот, навчений на документації та FAQ продукту.</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-tag">HR / Recruiting</div>
+          <div class="case-name">
+            <span data-lang="en" class="active">CV screening workflow</span>
+            <span data-lang="ru">Автоматический отбор резюме</span>
+            <span data-lang="es">Flujo de selección de CVs</span>
+            <span data-lang="uk">Автоматичний відбір резюме</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-metric"><span class="case-num">10×</span></div>
+          <div class="case-desc">
+            <span data-lang="en" class="active">Faster candidate shortlisting. An agent reads, scores, and ranks CVs — sending top candidates directly to the hiring manager.</span>
+            <span data-lang="ru">Ускорение отбора кандидатов. Агент читает, оценивает и ранжирует резюме, отправляя лучших напрямую нанимающему менеджеру.</span>
+            <span data-lang="es">Más rápida la preselección de candidatos. Un agente lee, puntúa y clasifica CVs enviando los mejores directamente al manager.</span>
+            <span data-lang="uk">Прискорення відбору кандидатів. Агент читає, оцінює та ранжує резюме, надсилаючи найкращих безпосередньо до менеджера.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label">
+      <span data-lang="en" class="active">Social proof</span>
+      <span data-lang="ru">Отзывы</span>
+      <span data-lang="es">Testimonios</span>
+      <span data-lang="uk">Відгуки</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="en" class="active">What clients say</span>
+      <span data-lang="ru">Что говорят клиенты</span>
+      <span data-lang="es">Lo que dicen los clientes</span>
+      <span data-lang="uk">Що кажуть клієнти</span>
+    </h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-quote">
+          <span data-lang="en" class="active">"The automation workflow built for our ops team saved us 3 full working days per month. Exceptional quality and clear communication throughout."</span>
+          <span data-lang="ru">«Автоматизация для нашей операционной команды сэкономила нам 3 полных рабочих дня в месяц. Исключительное качество и прозрачная коммуникация.»</span>
+          <span data-lang="es">"El flujo de trabajo automatizado para nuestro equipo nos ahorró 3 días laborables completos al mes. Calidad excepcional y comunicación clara."</span>
+          <span data-lang="uk">«Автоматизація для нашої операційної команди заощадила нам 3 повних робочих дні на місяць. Виняткова якість та прозора комунікація.»</span>
+        </div>
+        <div class="t-author">
+          <div class="t-avatar">AR</div>
+          <div>
+            <div class="t-name">Alex R.</div>
+            <div class="t-role">COO, TechStartup</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-quote">
+          <span data-lang="en" class="active">"Our support ticket volume is the same but the team workload dropped significantly. The AI assistant is indistinguishable from a real agent for routine questions."</span>
+          <span data-lang="ru">«Объём обращений тот же, но нагрузка на команду значительно снизилась. ИИ-ассистент неотличим от живого оператора в типовых вопросах.»</span>
+          <span data-lang="es">"El volumen de tickets es el mismo pero la carga del equipo bajó significativamente. El asistente IA es indistinguible de un agente real para preguntas rutinarias."</span>
+          <span data-lang="uk">«Обсяг звернень той самий, але навантаження на команду значно знизилося. ІІ-асистент невідрізнений від живого оператора у типових питаннях.»</span>
+        </div>
+        <div class="t-author">
+          <div class="t-avatar">MK</div>
+          <div>
+            <div class="t-name">Maria K.</div>
+            <div class="t-role">Head of Support, SaaS Co.</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-quote">
+          <span data-lang="en" class="active">"Fast, professional, and truly understood our business needs. Delivered a working prototype in less than a week and iterated quickly based on feedback."</span>
+          <span data-lang="ru">«Быстро, профессионально и с глубоким пониманием наших бизнес-потребностей. Рабочий прототип за неделю и быстрая итерация по фидбеку.»</span>
+          <span data-lang="es">"Rápido, profesional y con verdadera comprensión de nuestras necesidades. Entregó un prototipo funcional en menos de una semana con iteraciones ágiles."</span>
+          <span data-lang="uk">«Швидко, професійно та з глибоким розумінням наших бізнес-потреб. Робочий прототип за тиждень та швидка ітерація за фідбеком.»</span>
+        </div>
+        <div class="t-author">
+          <div class="t-avatar">DL</div>
+          <div>
+            <div class="t-name">David L.</div>
+            <div class="t-role">Founder, E-commerce brand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="section-label">
+      <span data-lang="en" class="active">Insights</span>
+      <span data-lang="ru">Блог</span>
+      <span data-lang="es">Blog</span>
+      <span data-lang="uk">Блог</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="en" class="active">Latest articles</span>
+      <span data-lang="ru">Последние статьи</span>
+      <span data-lang="es">Últimos artículos</span>
+      <span data-lang="uk">Останні статті</span>
+    </h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-date">March 2025</div>
+        <div class="blog-title">
+          <span data-lang="en" class="active">5 agentic workflows that save 10+ hours a week</span>
+          <span data-lang="ru">5 агентских воркфлоу, которые экономят 10+ часов в неделю</span>
+          <span data-lang="es">5 flujos agénticos que ahorran 10+ horas a la semana</span>
+          <span data-lang="uk">5 агентських воркфлоу, що економлять 10+ годин на тиждень</span>
+        </div>
+        <div class="blog-excerpt">
+          <span data-lang="en" class="active">A practical breakdown of automation patterns that deliver the highest ROI for small and mid-size businesses.</span>
+          <span data-lang="ru">Практический разбор паттернов автоматизации с наибольшим ROI для малого и среднего бизнеса.</span>
+          <span data-lang="es">Un análisis práctico de patrones de automatización que ofrecen el mayor ROI para pequeñas y medianas empresas.</span>
+          <span data-lang="uk">Практичний розбір паттернів автоматизації з найбільшим ROI для малого та середнього бізнесу.</span>
+        </div>
+        <span class="blog-tag">Automation</span>
+      </div>
+      <div class="blog-card">
+        <div class="blog-date">February 2025</div>
+        <div class="blog-title">
+          <span data-lang="en" class="active">RAG vs fine-tuning: when to use each</span>
+          <span data-lang="ru">RAG против файн-тюнинга: когда что применять</span>
+          <span data-lang="es">RAG vs fine-tuning: cuándo usar cada uno</span>
+          <span data-lang="uk">RAG проти файн-тюнінгу: коли що застосовувати</span>
+        </div>
+        <div class="blog-excerpt">
+          <span data-lang="en" class="active">A clear guide on choosing the right approach for building AI systems that work with your proprietary data.</span>
+          <span data-lang="ru">Понятное руководство по выбору правильного подхода при создании ИИ-систем, работающих с корпоративными данными.</span>
+          <span data-lang="es">Una guía clara para elegir el enfoque correcto al construir sistemas IA que trabajan con sus datos propietarios.</span>
+          <span data-lang="uk">Зрозумілий посібник із вибору правильного підходу при створенні ІІ-систем, що працюють з корпоративними даними.</span>
+        </div>
+        <span class="blog-tag">AI / LLM</span>
+      </div>
+      <div class="blog-card">
+        <div class="blog-date">January 2025</div>
+        <div class="blog-title">
+          <span data-lang="en" class="active">How to scope an automation project correctly</span>
+          <span data-lang="ru">Как правильно описать проект автоматизации</span>
+          <span data-lang="es">Cómo definir correctamente el alcance de un proyecto de automatización</span>
+          <span data-lang="uk">Як правильно описати проект автоматизації</span>
+        </div>
+        <div class="blog-excerpt">
+          <span data-lang="en" class="active">Common mistakes clients make when briefing automation projects — and how to avoid them for faster delivery.</span>
+          <span data-lang="ru">Типичные ошибки при составлении брифа на автоматизацию и как их избежать для более быстрой реализации.</span>
+          <span data-lang="es">Errores comunes al definir proyectos de automatización y cómo evitarlos para una entrega más rápida.</span>
+          <span data-lang="uk">Типові помилки при складанні бріфу на автоматизацію та як їх уникнути для швидшої реалізації.</span>
+        </div>
+        <span class="blog-tag">Process</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">
+      <span data-lang="en" class="active">Let's talk</span>
+      <span data-lang="ru">Свяжитесь</span>
+      <span data-lang="es">Hablemos</span>
+      <span data-lang="uk">Зв'яжіться</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="en" class="active">Start a project</span>
+      <span data-lang="ru">Начать проект</span>
+      <span data-lang="es">Comenzar un proyecto</span>
+      <span data-lang="uk">Розпочати проект</span>
+    </h2>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h3>
+          <span data-lang="en" class="active">Let's automate your business together</span>
+          <span data-lang="ru">Автоматизируем ваш бизнес вместе</span>
+          <span data-lang="es">Automaticemos su negocio juntos</span>
+          <span data-lang="uk">Автоматизуємо ваш бізнес разом</span>
+        </h3>
+        <p>
+          <span data-lang="en" class="active">Drop a message or reach me on LinkedIn or Upwork. I typically respond within 24 hours.</span>
+          <span data-lang="ru">Напишите или найдите меня в LinkedIn или Upwork. Обычно отвечаю в течение 24 часов.</span>
+          <span data-lang="es">Envíe un mensaje o encuéntreme en LinkedIn o Upwork. Normalmente respondo en 24 horas.</span>
+          <span data-lang="uk">Напишіть або знайдіть мене в LinkedIn або Upwork. Зазвичай відповідаю протягом 24 годин.</span>
+        </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/yevhenii-nohin-06b403347/" class="social-link"><span class="social-icon">in</span> LinkedIn</a>
+          <a href="https://www.upwork.com/freelancers/~013cd102dcb30a209f" class="social-link"><span class="social-icon">up</span> Upwork</a>
+          <a href="/cdn-cgi/l/email-protection#600e050f0c09140852505158010920070d01090c4e030f0d" class="social-link"><span class="social-icon">@</span> <span class="__cf_email__" data-cfemail="1a747f7576736e72282a2b227b735a7d777b737634797577">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact"/>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="en" class="active">Your name</span>
+            <span data-lang="ru">Ваше имя</span>
+            <span data-lang="es">Su nombre</span>
+            <span data-lang="uk">Ваше ім'я</span>
+          </label>
+          <input class="form-input" type="text" name="name"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" name="email"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="en" class="active">Message</span>
+            <span data-lang="ru">Сообщение</span>
+            <span data-lang="es">Mensaje</span>
+            <span data-lang="uk">Повідомлення</span>
+          </label>
+          <textarea class="form-textarea" name="message"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="form-submit-btn">
+          <span data-lang="en" class="active">Send message</span>
+          <span data-lang="ru">Отправить</span>
+          <span data-lang="es">Enviar mensaje</span>
+          <span data-lang="uk">Надіслати</span>
+        </button>
+        <div id="form-success" style="display:none;background:#1a1d27;border:1px solid #4fd1c5;border-radius:8px;padding:16px;color:#4fd1c5;font-size:15px;text-align:center;">
+          ✅ Message sent! I'll get back to you within 24 hours.
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span data-lang="en" class="active">© 2025 AIflow. All rights reserved.</span>
+  <span data-lang="ru">© 2025 AIflow. Все права защищены.</span>
+  <span data-lang="es">© 2025 AIflow. Todos los derechos reservados.</span>
+  <span data-lang="uk">© 2025 AIflow. Усі права захищені.</span>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch('/', { method: 'POST', body: data })
+      .then(() => {
+        form.reset();
+        document.getElementById('form-submit-btn').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      })
+      .catch(() => alert('Something went wrong. Please try again.'));
+  });
+});
+</script>
+<script>
+let curLang='en';
+const navLabels={
+  en:['About','Services','Cases','Reviews','Blog','Contact'],
+  ru:['О себе','Услуги','Кейсы','Отзывы','Блог','Контакты'],
+  es:['Sobre mí','Servicios','Casos','Reseñas','Blog','Contacto'],
+  uk:['Про мене','Послуги','Кейси','Відгуки','Блог','Контакти']
+};
+function setLang(l){
+  curLang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().toLowerCase()===l||(l==='uk'&&b.textContent.trim()==='UA')));
+  document.querySelectorAll('[data-lang]').forEach(el=>el.cla
