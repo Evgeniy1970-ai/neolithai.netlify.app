@@ -7,19 +7,18 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg:#0d0f14;
-  --bg2:#13161e;
-  --bg3:#1a1d27;
-  --accent:#6c63ff;
-  --accent2:#4fd1c5;
-  --text:#e8eaf0;
-  --text2:#8b8fa8;
-  --border:#ffffff14;
-  --card:#1a1d27;
+--bg:#0d0f14;
+--bg2:#13161e;
+--bg3:#1a1d27;
+--accent:#6c63ff;
+--accent2:#4fd1c5;
+--text:#e8eaf0;
+--text2:#8b8fa8;
+--border:#ffffff14;
+--card:#1a1d27;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;font-size:16px;}
-
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#0d0f14dd;backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
@@ -30,13 +29,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#0d0f14dd;backdro
 .lang-switcher{display:flex;gap:6px;}
 .lang-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer;transition:all .2s;}
 .lang-btn.active,.lang-btn:hover{border-color:var(--accent);color:var(--accent);}
-
 /* SECTIONS */
 section{padding:6rem 2rem;}
 .container{max-width:1100px;margin:0 auto;}
 .section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:.5rem;}
 h2.section-title{font-size:2rem;font-weight:600;margin-bottom:3rem;color:var(--text);}
-
 /* HERO */
 #hero{padding:9rem 2rem 6rem;border-bottom:1px solid var(--border);}
 .hero-layout{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;max-width:1100px;margin:0 auto;}
@@ -50,12 +47,12 @@ h1 span{color:var(--accent);}
 .btn-primary:hover{opacity:.85;}
 .btn-outline{background:none;color:var(--text);border:1px solid var(--border);padding:12px 28px;border-radius:8px;font-size:15px;cursor:pointer;text-decoration:none;transition:border-color .2s;}
 .btn-outline:hover{border-color:var(--accent2);}
-.hero-avatar{width:220px;height:220px;border-radius:50%;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:72px;flex-shrink:0;}
+.hero-avatar{width:220px;height:220px;border-radius:50%;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 .hero-stats{display:flex;gap:2rem;margin-top:2.5rem;}
 .stat{border-left:2px solid var(--accent);padding-left:1rem;}
 .stat-num{font-size:1.5rem;font-weight:700;color:var(--text);}
 .stat-label{font-size:13px;color:var(--text2);}
-
 /* SERVICES */
 #services{background:var(--bg2);border-bottom:1px solid var(--border);}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
@@ -64,7 +61,6 @@ h1 span{color:var(--accent);}
 .service-icon{font-size:28px;margin-bottom:1rem;}
 .service-title{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--text);}
 .service-desc{font-size:14px;color:var(--text2);line-height:1.6;}
-
 /* CASES */
 #cases{border-bottom:1px solid var(--border);}
 .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;}
@@ -77,7 +73,6 @@ h1 span{color:var(--accent);}
 .case-metric{display:flex;align-items:baseline;gap:8px;margin-bottom:.5rem;}
 .case-num{font-size:1.75rem;font-weight:700;color:var(--accent);}
 .case-desc{font-size:14px;color:var(--text2);}
-
 /* TESTIMONIALS */
 #testimonials{background:var(--bg2);border-bottom:1px solid var(--border);}
 .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
@@ -87,7 +82,6 @@ h1 span{color:var(--accent);}
 .t-avatar{width:40px;height:40px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:var(--accent);}
 .t-name{font-size:14px;font-weight:600;color:var(--text);}
 .t-role{font-size:12px;color:var(--text2);}
-
 /* BLOG */
 #blog{border-bottom:1px solid var(--border);}
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
@@ -96,8 +90,9 @@ h1 span{color:var(--accent);}
 .blog-date{font-size:12px;color:var(--text2);margin-bottom:.5rem;}
 .blog-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.75rem;line-height:1.4;}
 .blog-excerpt{font-size:14px;color:var(--text2);line-height:1.6;}
+.blog-body{font-size:14px;color:var(--text2);line-height:1.7;margin-top:.75rem;display:none;}
 .blog-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--accent2);margin-top:1rem;}
-
+.blog-toggle{background:none;border:none;color:var(--accent);font-size:13px;cursor:pointer;margin-top:.75rem;padding:0;}
 /* CONTACT */
 #contact{background:var(--bg2);}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
@@ -115,16 +110,13 @@ h1 span{color:var(--accent);}
 .form-textarea{resize:vertical;min-height:120px;}
 .form-submit{background:var(--accent);color:#fff;border:none;padding:13px;border-radius:8px;font-size:15px;font-weight:500;cursor:pointer;transition:opacity .2s;}
 .form-submit:hover{opacity:.85;}
-
 footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:var(--text2);font-size:13px;}
-
 @media(max-width:760px){
-  .hero-layout{grid-template-columns:1fr;}
-  .hero-avatar{display:none;}
-  .contact-layout{grid-template-columns:1fr;}
-  .nav-links{display:none;}
+.hero-layout{grid-template-columns:1fr;}
+.hero-avatar{display:none;}
+.contact-layout{grid-template-columns:1fr;}
+.nav-links{display:none;}
 }
-
 /* lang hide */
 [data-lang]{display:none;}
 [data-lang].active{display:block;}
@@ -221,9 +213,9 @@ span[data-lang].active{display:inline;}
         </div>
       </div>
     </div>
-    <div class="hero-avatar" style="padding:0;overflow:hidden;">
-  <img src="photo.jpg" alt="Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
-</div>
+    <div class="hero-avatar">
+      <img src="photo_new.jpeg" alt="Yevhenii Nohin — AI Automation Specialist">
+    </div>
   </div>
 </section>
 
@@ -498,54 +490,60 @@ span[data-lang].active{display:inline;}
       <span data-lang="uk">Останні статті</span>
     </h2>
     <div class="blog-grid">
+
+      <!-- Article 1 -->
       <div class="blog-card">
-        <div class="blog-date">March 2025</div>
-        <div class="blog-title">
-          <span data-lang="en" class="active">5 agentic workflows that save 10+ hours a week</span>
-          <span data-lang="ru">5 агентских воркфлоу, которые экономят 10+ часов в неделю</span>
-          <span data-lang="es">5 flujos agénticos que ahorran 10+ horas a la semana</span>
-          <span data-lang="uk">5 агентських воркфлоу, що економлять 10+ годин на тиждень</span>
+        <div class="blog-date">April 2025</div>
+        <div class="blog-title">5 agentic workflows that save 10+ hours a week</div>
+        <div class="blog-excerpt">Most businesses waste time on the same five tasks every single week — tasks that an AI agent can handle without supervision. Here's a practical breakdown of the patterns that deliver the highest ROI.</div>
+        <div class="blog-body" id="blog-body-1">
+          <p style="margin-bottom:.75rem;">Traditional automation is a fixed script: if X happens, do Y. Agentic workflows add a reasoning layer — the AI decides what to do next based on context. This means the same workflow handles edge cases and unexpected inputs without crashing.</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">The 5 workflows:</strong></p>
+          <p style="margin-bottom:.5rem;">① <strong style="color:var(--text);">Lead qualification pipeline</strong> — scores and routes inbound leads automatically. Saves sales teams 2–3 hrs/day of triage.</p>
+          <p style="margin-bottom:.5rem;">② <strong style="color:var(--text);">CV screening agent</strong> — reads, scores, and ranks applications against job criteria. Reduces shortlisting from days to minutes.</p>
+          <p style="margin-bottom:.5rem;">③ <strong style="color:var(--text);">Daily briefing digest</strong> — monitors news, mentions, and competitor activity. Delivers a structured summary every morning.</p>
+          <p style="margin-bottom:.5rem;">④ <strong style="color:var(--text);">Email draft assistant</strong> — generates first-draft replies to common customer queries, ready for one-click review.</p>
+          <p style="margin-bottom:.75rem;">⑤ <strong style="color:var(--text);">Meeting notes to tasks</strong> — transcribes, extracts action items, and syncs them to your project tool automatically.</p>
+          <p>The biggest mistake teams make is automating the wrong thing first. Start with the task your team complains about most — not the one that sounds most impressive.</p>
         </div>
-        <div class="blog-excerpt">
-          <span data-lang="en" class="active">A practical breakdown of automation patterns that deliver the highest ROI for small and mid-size businesses.</span>
-          <span data-lang="ru">Практический разбор паттернов автоматизации с наибольшим ROI для малого и среднего бизнеса.</span>
-          <span data-lang="es">Un análisis práctico de patrones de automatización que ofrecen el mayor ROI para pequeñas y medianas empresas.</span>
-          <span data-lang="uk">Практичний розбір паттернів автоматизації з найбільшим ROI для малого та середнього бізнесу.</span>
-        </div>
+        <button class="blog-toggle" onclick="toggleBlog('blog-body-1', this)">Read more ↓</button>
         <span class="blog-tag">Automation</span>
       </div>
+
+      <!-- Article 2 -->
       <div class="blog-card">
-        <div class="blog-date">February 2025</div>
-        <div class="blog-title">
-          <span data-lang="en" class="active">RAG vs fine-tuning: when to use each</span>
-          <span data-lang="ru">RAG против файн-тюнинга: когда что применять</span>
-          <span data-lang="es">RAG vs fine-tuning: cuándo usar cada uno</span>
-          <span data-lang="uk">RAG проти файн-тюнінгу: коли що застосовувати</span>
+        <div class="blog-date">March 2025</div>
+        <div class="blog-title">RAG vs fine-tuning: when to use each (and when to use neither)</div>
+        <div class="blog-excerpt">Two terms dominate every AI project conversation: RAG and fine-tuning. Both let AI work with your specific knowledge — but they solve different problems, cost different amounts, and fail in completely different ways.</div>
+        <div class="blog-body" id="blog-body-2">
+          <p style="margin-bottom:.75rem;">RAG (retrieval-augmented generation) keeps your data outside the model. At query time, the system fetches relevant chunks and passes them to the LLM as context. The model itself never changes. Fine-tuning modifies the model's weights using your data — baking knowledge directly into the neural network.</p>
+          <p style="margin-bottom:.5rem;"><strong style="color:var(--text);">Choose RAG when:</strong> your data changes frequently, you need source citations, budget is limited, or you want to audit what the AI retrieves.</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">Choose fine-tuning when:</strong> you need a very specific output style, data is static and well-structured, or response latency is critical.</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">Cost comparison (2025):</strong> Prompt engineering — ~$0. RAG setup — $50–500. Fine-tuning — $500–5,000+.</p>
+          <p>For 90% of business automation projects, RAG is the right starting point. It's faster to build, cheaper to maintain, and easier to debug when something goes wrong.</p>
         </div>
-        <div class="blog-excerpt">
-          <span data-lang="en" class="active">A clear guide on choosing the right approach for building AI systems that work with your proprietary data.</span>
-          <span data-lang="ru">Понятное руководство по выбору правильного подхода при создании ИИ-систем, работающих с корпоративными данными.</span>
-          <span data-lang="es">Una guía clara para elegir el enfoque correcto al construir sistemas IA que trabajan con sus datos propietarios.</span>
-          <span data-lang="uk">Зрозумілий посібник із вибору правильного підходу при створенні ІІ-систем, що працюють з корпоративними даними.</span>
-        </div>
+        <button class="blog-toggle" onclick="toggleBlog('blog-body-2', this)">Read more ↓</button>
         <span class="blog-tag">AI / LLM</span>
       </div>
+
+      <!-- Article 3 -->
       <div class="blog-card">
-        <div class="blog-date">January 2025</div>
-        <div class="blog-title">
-          <span data-lang="en" class="active">How to scope an automation project correctly</span>
-          <span data-lang="ru">Как правильно описать проект автоматизации</span>
-          <span data-lang="es">Cómo definir correctamente el alcance de un proyecto de automatización</span>
-          <span data-lang="uk">Як правильно описати проект автоматизації</span>
+        <div class="blog-date">February 2025</div>
+        <div class="blog-title">How to scope an automation project correctly (before you write a single line)</div>
+        <div class="blog-excerpt">Most automation projects fail not because of bad code — but because of a bad brief. The client describes the symptom, not the process. Here's how to get the scope right from the first conversation.</div>
+        <div class="blog-body" id="blog-body-3">
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">The four questions that matter:</strong></p>
+          <p style="margin-bottom:.5rem;">① <strong style="color:var(--text);">What triggers this process today?</strong> Email arrives? Form submitted? End of day? Knowing the trigger defines where automation begins.</p>
+          <p style="margin-bottom:.5rem;">② <strong style="color:var(--text);">What does "done" look like?</strong> A row in a spreadsheet? A sent email? Without a clear output, there's no way to test success.</p>
+          <p style="margin-bottom:.5rem;">③ <strong style="color:var(--text);">What are the exceptions?</strong> Every process has edge cases the team handles manually. These need to be mapped — or the automation will silently fail on 20% of cases.</p>
+          <p style="margin-bottom:.75rem;">④ <strong style="color:var(--text);">Who approves what?</strong> Any step requiring a human decision needs an escalation path. Otherwise you've built a workflow that gets stuck.</p>
+          <p style="margin-bottom:.75rem;">Watch out for phrases like "it's simple, just automate it" (usually means they haven't mapped the process) and "the AI should know what to do" (means no clear output has been defined).</p>
+          <p>Spend 30 minutes mapping the current manual process before writing any workflow. Draw it as a flowchart — if you can't, the process isn't ready to automate yet.</p>
         </div>
-        <div class="blog-excerpt">
-          <span data-lang="en" class="active">Common mistakes clients make when briefing automation projects — and how to avoid them for faster delivery.</span>
-          <span data-lang="ru">Типичные ошибки при составлении брифа на автоматизацию и как их избежать для более быстрой реализации.</span>
-          <span data-lang="es">Errores comunes al definir proyectos de automatización y cómo evitarlos para una entrega más rápida.</span>
-          <span data-lang="uk">Типові помилки при складанні бріфу на автоматизацію та як їх уникнути для швидшої реалізації.</span>
-        </div>
+        <button class="blog-toggle" onclick="toggleBlog('blog-body-3', this)">Read more ↓</button>
         <span class="blog-tag">Process</span>
       </div>
+
     </div>
   </div>
 </section>
@@ -582,7 +580,6 @@ span[data-lang].active{display:inline;}
         <div class="social-links">
           <a href="https://www.linkedin.com/in/yevhenii-nohin-06b403347/" class="social-link"><span class="social-icon">in</span> LinkedIn</a>
           <a href="https://www.upwork.com/freelancers/~013cd102dcb30a209f" class="social-link"><span class="social-icon">up</span> Upwork</a>
-          <a href="/cdn-cgi/l/email-protection#600e050f0c09140852505158010920070d01090c4e030f0d" class="social-link"><span class="social-icon">@</span> <span class="__cf_email__" data-cfemail="1a747f7576736e72282a2b227b735a7d777b737634797577">[email&#160;protected]</span></a>
         </div>
       </div>
       <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true">
@@ -619,7 +616,6 @@ span[data-lang].active{display:inline;}
           ✅ Message sent! I'll get back to you within 24 hours.
         </div>
       </form>
-      </div>
     </div>
   </div>
 </section>
@@ -632,31 +628,67 @@ span[data-lang].active{display:inline;}
 </footer>
 
 <script>
+// Blog toggle
+function toggleBlog(id, btn) {
+  var body = document.getElementById(id);
+  var isOpen = body.style.display === 'block';
+  body.style.display = isOpen ? 'none' : 'block';
+  btn.textContent = isOpen ? 'Read more ↓' : 'Read less ↑';
+}
+
+// Contact form
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('contact-form');
+  var form = document.getElementById('contact-form');
   if (!form) return;
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    const data = new FormData(form);
+    var data = new FormData(form);
     fetch('/', { method: 'POST', body: data })
-      .then(() => {
+      .then(function() {
         form.reset();
         document.getElementById('form-submit-btn').style.display = 'none';
         document.getElementById('form-success').style.display = 'block';
       })
-      .catch(() => alert('Something went wrong. Please try again.'));
+      .catch(function() { alert('Something went wrong. Please try again.'); });
   });
 });
-</script>
-<script>
-let curLang='en';
-const navLabels={
-  en:['About','Services','Cases','Reviews','Blog','Contact'],
-  ru:['О себе','Услуги','Кейсы','Отзывы','Блог','Контакты'],
-  es:['Sobre mí','Servicios','Casos','Reseñas','Blog','Contacto'],
-  uk:['Про мене','Послуги','Кейси','Відгуки','Блог','Контакти']
+
+// Language switcher — FIXED
+var navLabels = {
+  en: ['About','Services','Cases','Reviews','Blog','Contact'],
+  ru: ['О себе','Услуги','Кейсы','Отзывы','Блог','Контакты'],
+  es: ['Sobre mí','Servicios','Casos','Reseñas','Blog','Contacto'],
+  uk: ['Про мене','Послуги','Кейси','Відгуки','Блог','Контакти']
 };
-function setLang(l){
-  curLang=l;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().toLowerCase()===l||(l==='uk'&&b.textContent.trim()==='UA')));
-  document.querySelectorAll('[data-lang]').forEach(el=>el.cla
+
+function setLang(l) {
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    var btnText = b.textContent.trim().toLowerCase();
+    var isActive = btnText === l || (l === 'uk' && btnText === 'ua');
+    b.classList.toggle('active', isActive);
+  });
+
+  // Show/hide language elements
+  document.querySelectorAll('[data-lang]').forEach(function(el) {
+    el.classList.toggle('active', el.getAttribute('data-lang') === l);
+  });
+
+  // Update nav link labels
+  var navLinks = document.querySelectorAll('[data-nav]');
+  navLinks.forEach(function(link) {
+    var key = link.getAttribute('data-nav');
+    var keys = ['about','services','cases','reviews','blog','contact'];
+    var idx = keys.indexOf(key);
+    if (idx !== -1 && navLabels[l]) {
+      link.textContent = navLabels[l][idx];
+    }
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = l;
+}
+</script>
+
+</body>
+</html>
