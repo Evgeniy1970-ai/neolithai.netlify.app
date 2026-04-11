@@ -122,6 +122,13 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:v
 [data-lang].active{display:block;}
 span[data-lang]{display:none;}
 span[data-lang].active{display:inline;}
+.case-links{display:flex;gap:10px;margin-top:1rem;flex-wrap:wrap;}
+.case-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:6px;padding:5px 12px;transition:all .2s;}
+.case-link:hover{background:var(--accent);color:#fff;}
+.case-link svg{width:14px;height:14px;fill:currentColor;}
+.case-badge{display:inline-flex;align-items:center;gap:4px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-left:8px;}
+.case-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:.75rem;}
+.case-stack-tag{font-size:11px;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:2px 10px;color:var(--text2);}
 </style>
 </head>
 <body>
@@ -345,6 +352,46 @@ span[data-lang].active{display:inline;}
       <span data-lang="uk">Кейси</span>
     </h2>
     <div class="cases-grid">
+      <div class="case-card">
+  <div class="case-header">
+    <div class="case-tag">
+      B2B Sales / Lead Gen
+      <span class="case-badge">LIVE</span>
+    </div>
+    <div class="case-name">
+      <span data-lang="en" class="active">AI lead generation agent</span>
+      <span data-lang="ru">ИИ-агент для генерации лидов</span>
+      <span data-lang="es">Agente IA de generación de leads</span>
+      <span data-lang="uk">ІІ-агент для генерації лідів</span>
+    </div>
+  </div>
+  <div class="case-body">
+    <div class="case-metric"><span class="case-num">100%</span></div>
+    <div class="case-desc">
+      <span data-lang="en" class="active">Fully autonomous B2B outreach pipeline. Discovers businesses via Google Maps, enriches contacts with email & LinkedIn, scores leads with AI, sends personalized cold emails with follow-ups — all triggered by a single Telegram message.</span>
+      <span data-lang="ru">Полностью автономный B2B-пайплайн. Находит компании через Google Maps, обогащает контакты email и LinkedIn, скорит лидов с помощью ИИ, отправляет персонализированные холодные письма с фоллоу-апами — всё по одному сообщению в Telegram.</span>
+      <span data-lang="es">Pipeline B2B totalmente autónomo. Descubre empresas vía Google Maps, enriquece contactos con email y LinkedIn, califica leads con IA, envía emails fríos personalizados con seguimientos — todo activado por un mensaje de Telegram.</span>
+      <span data-lang="uk">Повністю автономний B2B-пайплайн. Знаходить компанії через Google Maps, збагачує контакти email та LinkedIn, скорить лідів за допомогою ІІ, надсилає персоналізовані холодні листи з фоллоу-апами — все через одне повідомлення в Telegram.</span>
+    </div>
+    <div class="case-stack">
+      <span class="case-stack-tag">n8n</span>
+      <span class="case-stack-tag">GPT-4o</span>
+      <span class="case-stack-tag">Google Maps API</span>
+      <span class="case-stack-tag">Serper</span>
+      <span class="case-stack-tag">Gmail</span>
+      <span class="case-stack-tag">Telegram</span>
+    </div>
+    <div class="case-links">
+      <a href="https://github.com/Evgeniy1970-ai/AI-Lead-Gen-Production-Full-Workflow_production" target="_blank" rel="noopener" class="case-link">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span data-lang="en" class="active">View on GitHub</span>
+        <span data-lang="ru">Смотреть на GitHub</span>
+        <span data-lang="es">Ver en GitHub</span>
+        <span data-lang="uk">Переглянути на GitHub</span>
+      </a>
+    </div>
+  </div>
+</div>
       <div class="case-card">
         <div class="case-header">
           <div class="case-tag">E-commerce</div>
