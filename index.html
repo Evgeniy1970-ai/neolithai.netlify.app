@@ -144,7 +144,7 @@ h1 span{color:var(--accent);}
 .story-block h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #a78bfa;
+  color: var(--accent2);
   margin: 0 0 8px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -203,11 +203,11 @@ h1 span{color:var(--accent);}
 }
 
 .about-tools h3 {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted, #9090a8);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   margin: 0 0 16px;
 }
 
@@ -548,6 +548,44 @@ function toggleBlog(id, btn) {
           </div>
         </div>
 
+        <div class="about-tools">
+          <h3>
+            <span data-lang="en" class="active">My Approach</span>
+            <span data-lang="ru">Мой подход</span>
+            <span data-lang="es">Mi enfoque</span>
+            <span data-lang="uk">Мій підхід</span>
+          </h3>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <span style="color:#6c63ff;font-size:16px;margin-top:2px;">→</span>
+              <span style="font-size:14px;color:var(--text2);">
+                <span data-lang="en" class="active">Start with the process, not the tool — understand the workflow before writing a single node.</span>
+                <span data-lang="ru">Начинаю с процесса, а не с инструмента — понимаю воркфлоу до первой ноды.</span>
+                <span data-lang="es">Empiezo con el proceso, no con la herramienta — entiendo el flujo antes de escribir un solo nodo.</span>
+                <span data-lang="uk">Починаю з процесу, а не з інструменту — розумію воркфлоу до першої ноди.</span>
+              </span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <span style="color:#6c63ff;font-size:16px;margin-top:2px;">→</span>
+              <span style="font-size:14px;color:var(--text2);">
+                <span data-lang="en" class="active">Build modular — every agent works independently and can be added or removed without breaking the system.</span>
+                <span data-lang="ru">Строю модульно — каждый агент работает независимо и может быть добавлен или удалён без поломки системы.</span>
+                <span data-lang="es">Construyo de forma modular — cada agente funciona independientemente y puede añadirse o eliminarse sin romper el sistema.</span>
+                <span data-lang="uk">Будую модульно — кожен агент працює незалежно і може бути доданий або видалений без поломки системи.</span>
+              </span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <span style="color:#6c63ff;font-size:16px;margin-top:2px;">→</span>
+              <span style="font-size:14px;color:var(--text2);">
+                <span data-lang="en" class="active">Deliver production-ready — not demos, but real systems with error handling, logging and monitoring.</span>
+                <span data-lang="ru">Сдаю production-ready — не демо, а реальные системы с обработкой ошибок, логированием и мониторингом.</span>
+                <span data-lang="es">Entrego listo para producción — no demos, sino sistemas reales con manejo de errores, registro y monitoreo.</span>
+                <span data-lang="uk">Здаю production-ready — не демо, а реальні системи з обробкою помилок, логуванням та моніторингом.</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -725,7 +763,7 @@ function toggleBlog(id, btn) {
   <div class="case-header">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;">
       <div class="case-tag">Restaurant / HoReCa</div>
-      <span style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:#4fd1c522;color:#4fd1c5;border:1px solid #4fd1c544;border-radius:20px;padding:3px 10px;">LIVE</span>
+      <span class="case-badge">LIVE</span>
     </div>
     <div class="case-name">
       <span data-lang="en" class="active">Restaurant AI Suite</span>
@@ -765,7 +803,7 @@ function toggleBlog(id, btn) {
   <div class="case-header">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;">
       <div class="case-tag">HR / Recruiting</div>
-      <span style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:#4fd1c522;color:#4fd1c5;border:1px solid #4fd1c544;border-radius:20px;padding:3px 10px;">LIVE</span>
+      <span class="case-badge">LIVE</span>
     </div>
     <div class="case-name">
       <span data-lang="en" class="active">CV Screening Agent</span>
@@ -885,55 +923,56 @@ function toggleBlog(id, btn) {
 
       <!-- Article 1 -->
       <div class="blog-card">
-        <div class="blog-date">April 2025</div>
-        <div class="blog-title">5 agentic workflows that save 10+ hours a week</div>
-        <div class="blog-excerpt">Most businesses waste time on the same five tasks every single week — tasks that an AI agent can handle without supervision. Here's a practical breakdown of the patterns that deliver the highest ROI.</div>
+        <div class="blog-date">April 2026</div>
+        <div class="blog-title">MCP: the new standard that turns AI chatbots into real business agents</div>
+        <div class="blog-excerpt">The Model Context Protocol has quietly become the infrastructure layer for agentic AI — reaching 97 million monthly SDK downloads and support from every major AI provider. Here's what it means for businesses building automation in 2026.</div>
         <div class="blog-body" id="blog-body-1">
-          <p style="margin-bottom:.75rem;">Traditional automation is a fixed script: if X happens, do Y. Agentic workflows add a reasoning layer — the AI decides what to do next based on context. This means the same workflow handles edge cases and unexpected inputs without crashing.</p>
-          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">The 5 workflows:</strong></p>
-          <p style="margin-bottom:.5rem;">① <strong style="color:var(--text);">Lead qualification pipeline</strong> — scores and routes inbound leads automatically. Saves sales teams 2–3 hrs/day of triage.</p>
-          <p style="margin-bottom:.5rem;">② <strong style="color:var(--text);">CV screening agent</strong> — reads, scores, and ranks applications against job criteria. Reduces shortlisting from days to minutes.</p>
-          <p style="margin-bottom:.5rem;">③ <strong style="color:var(--text);">Daily briefing digest</strong> — monitors news, mentions, and competitor activity. Delivers a structured summary every morning.</p>
-          <p style="margin-bottom:.5rem;">④ <strong style="color:var(--text);">Email draft assistant</strong> — generates first-draft replies to common customer queries, ready for one-click review.</p>
-          <p style="margin-bottom:.75rem;">⑤ <strong style="color:var(--text);">Meeting notes to tasks</strong> — transcribes, extracts action items, and syncs them to your project tool automatically.</p>
-          <p>The biggest mistake teams make is automating the wrong thing first. Start with the task your team complains about most — not the one that sounds most impressive.</p>
+          <p style="margin-bottom:.75rem;">Before MCP, connecting an AI model to your CRM, database, or calendar required custom code for each integration. With 10+ tools, that's a maintenance nightmare. MCP solves this by providing a single universal protocol — like USB-C for AI — so any agent can connect to any MCP-compatible tool without bespoke wiring.</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">Why it matters now:</strong> As of April 2026, MCP is supported by Claude, ChatGPT, Gemini, Microsoft Copilot, and AWS Bedrock. Over 10,000 MCP servers exist covering CRMs, databases, project tools, and more.</p>
+          <p style="margin-bottom:.5rem;"><strong style="color:var(--text);">Real example:</strong> A customer support agent connected via MCP can read a ticket, check the customer's order history, query the inventory system, draft a reply, and create a follow-up task — all in one automated workflow that previously required five manual steps.</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">For n8n users:</strong> MCP support is already being incorporated into automation platforms, reducing the custom code required for agent-to-tool connections significantly.</p>
+          <p>The businesses building MCP-connected workflows now will have a meaningful operational advantage over those scrambling to adopt it in 2027.</p>
         </div>
         <button class="blog-toggle" onclick="toggleBlog('blog-body-1', this)">Read more ↓</button>
-        <span class="blog-tag">Automation</span>
+        <span class="blog-tag">AI Agents</span>
       </div>
 
       <!-- Article 2 -->
       <div class="blog-card">
-        <div class="blog-date">March 2025</div>
-        <div class="blog-title">RAG vs fine-tuning: when to use each (and when to use neither)</div>
-        <div class="blog-excerpt">Two terms dominate every AI project conversation: RAG and fine-tuning. Both let AI work with your specific knowledge — but they solve different problems, cost different amounts, and fail in completely different ways.</div>
+        <div class="blog-date">March 2026</div>
+        <div class="blog-title">n8n in 2026: from workflow automation to AI-augmented orchestration</div>
+        <div class="blog-excerpt">n8n 2.0 landed with a major overhaul focused on security, scalability and agentic AI. Modular multi-agent architectures, human-in-the-loop controls, and self-hosted AI pipelines are now production-ready — not experimental.</div>
         <div class="blog-body" id="blog-body-2">
-          <p style="margin-bottom:.75rem;">RAG (retrieval-augmented generation) keeps your data outside the model. At query time, the system fetches relevant chunks and passes them to the LLM as context. The model itself never changes. Fine-tuning modifies the model's weights using your data — baking knowledge directly into the neural network.</p>
-          <p style="margin-bottom:.5rem;"><strong style="color:var(--text);">Choose RAG when:</strong> your data changes frequently, you need source citations, budget is limited, or you want to audit what the AI retrieves.</p>
-          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">Choose fine-tuning when:</strong> you need a very specific output style, data is static and well-structured, or response latency is critical.</p>
-          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">Cost comparison (2025):</strong> Prompt engineering — ~$0. RAG setup — $50–500. Fine-tuning — $500–5,000+.</p>
-          <p>For 90% of business automation projects, RAG is the right starting point. It's faster to build, cheaper to maintain, and easier to debug when something goes wrong.</p>
+          <p style="margin-bottom:.75rem;">The full release of n8n 2.0 marked a shift from simple trigger-action workflows to genuine AI orchestration. Task Runners now isolate workflow execution for better security. The AI Workflow Builder generates nodes from natural language prompts. And sub-workflow architectures make complex multi-agent systems maintainable.</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">What's new in practice:</strong></p>
+          <p style="margin-bottom:.5rem;">① <strong style="color:var(--text);">Orchestrator-worker patterns</strong> — a central agent breaks down tasks and delegates to specialist agents in parallel.</p>
+          <p style="margin-bottom:.5rem;">② <strong style="color:var(--text);">Human-in-the-loop nodes</strong> — workflows pause for human approval at high-stakes decision points before continuing.</p>
+          <p style="margin-bottom:.5rem;">③ <strong style="color:var(--text);">Self-hosted AI</strong> — run LLMs on your own infrastructure, keeping sensitive data inside your network. Critical for healthcare, legal, and finance.</p>
+          <p style="margin-bottom:.75rem;">④ <strong style="color:var(--text);">MCP integration</strong> — n8n agent nodes can now consume MCP servers, dramatically reducing integration boilerplate.</p>
+          <p>For freelancers and agencies, this means clients can get production-grade AI automation without enterprise-level budgets — the complexity is handled by the platform, not custom code.</p>
         </div>
         <button class="blog-toggle" onclick="toggleBlog('blog-body-2', this)">Read more ↓</button>
-        <span class="blog-tag">AI / LLM</span>
+        <span class="blog-tag">n8n</span>
       </div>
 
       <!-- Article 3 -->
       <div class="blog-card">
-        <div class="blog-date">February 2025</div>
-        <div class="blog-title">How to scope an automation project correctly (before you write a single line)</div>
-        <div class="blog-excerpt">Most automation projects fail not because of bad code — but because of a bad brief. The client describes the symptom, not the process. Here's how to get the scope right from the first conversation.</div>
+        <div class="blog-date">March 2026</div>
+        <div class="blog-title">AI agents in automation platforms: what's actually production-ready in 2026</div>
+        <div class="blog-excerpt">After two years of hype, the picture is clearer: AI agents handle structured tasks reliably, but multi-step autonomous decision-making is still maturing. Here's an honest assessment of what you can ship to clients today.</div>
         <div class="blog-body" id="blog-body-3">
-          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">The four questions that matter:</strong></p>
-          <p style="margin-bottom:.5rem;">① <strong style="color:var(--text);">What triggers this process today?</strong> Email arrives? Form submitted? End of day? Knowing the trigger defines where automation begins.</p>
-          <p style="margin-bottom:.5rem;">② <strong style="color:var(--text);">What does "done" look like?</strong> A row in a spreadsheet? A sent email? Without a clear output, there's no way to test success.</p>
-          <p style="margin-bottom:.5rem;">③ <strong style="color:var(--text);">What are the exceptions?</strong> Every process has edge cases the team handles manually. These need to be mapped — or the automation will silently fail on 20% of cases.</p>
-          <p style="margin-bottom:.75rem;">④ <strong style="color:var(--text);">Who approves what?</strong> Any step requiring a human decision needs an escalation path. Otherwise you've built a workflow that gets stuck.</p>
-          <p style="margin-bottom:.75rem;">Watch out for phrases like "it's simple, just automate it" (usually means they haven't mapped the process) and "the AI should know what to do" (means no clear output has been defined).</p>
-          <p>Spend 30 minutes mapping the current manual process before writing any workflow. Draw it as a flowchart — if you can't, the process isn't ready to automate yet.</p>
+          <p style="margin-bottom:.75rem;">The AI agent market grew from $7.84 billion in 2025 to a projected $52.62 billion by 2030 — a 46% CAGR. Gartner predicts 40% of enterprise applications will embed task-specific agents by end of 2026. But the gap between the market narrative and production reality is worth mapping carefully.</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">Production-ready today:</strong></p>
+          <p style="margin-bottom:.5rem;">✅ Data extraction, classification, and summarisation from structured sources</p>
+          <p style="margin-bottom:.5rem;">✅ Single-domain agents with clear inputs and outputs (review monitoring, CV screening, inventory alerts)</p>
+          <p style="margin-bottom:.75rem;">✅ Scheduled agents with deterministic fallback logic and error handling</p>
+          <p style="margin-bottom:.75rem;"><strong style="color:var(--text);">Still maturing:</strong></p>
+          <p style="margin-bottom:.5rem;">⚠️ Multi-step autonomous decision-making across multiple systems</p>
+          <p style="margin-bottom:.75rem;">⚠️ Agents operating without human-in-the-loop checkpoints in high-stakes contexts</p>
+          <p>The practical takeaway: build modular. Each agent handles one domain, has clear error paths, and logs everything. Composing reliable simple agents beats building one ambitious agent that fails unpredictably.</p>
         </div>
         <button class="blog-toggle" onclick="toggleBlog('blog-body-3', this)">Read more ↓</button>
-        <span class="blog-tag">Process</span>
+        <span class="blog-tag">Industry</span>
       </div>
 
     </div>
