@@ -44,8 +44,8 @@ Previously worked in archaeology. Now I apply the same systematic, detail-orient
 
 | # | Project | Stack | Status |
 |---|---------|-------|--------|
-| 1 | CV Screening Agent | n8n · Claude · Google Sheets · Telegram | 🔨 In progress |
-| 2 | Lead Intake Pipeline | n8n · Typeform · Claude · Gmail · Notion | 📅 Planned |
+| 1 | CV Screening Agent | n8n · Claude · Google Sheets · Telegram | 🔨 Done |
+| 2 | Lead Intake Pipeline | n8n · Typeform · Claude · Gmail · Notion | 📅 Done |
 | 3 | Order Processing Automation | n8n · Claude · Airtable | 📅 Planned |
 | 4 | Brand Monitoring Digest | n8n · RSS · Claude · Telegram | 📅 Planned |
 | 5 | Customer Support RAG Bot | n8n · Supabase · Claude | 📅 Planned |
